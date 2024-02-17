@@ -37,7 +37,7 @@ public class EmployeesController {
     public String employees(Model model){
         List<EmployeeEntity> employees= employeeRepository.findAll();
         model.addAttribute("employees", employees);
-        model.addAttribute("updateEmployeeDTO", new UpdateEmployeeDTO());
+        model.addAttribute("updateEmployeeDTO", new EmployeeDTO());
         return "employees";
     }
 
@@ -56,7 +56,7 @@ public class EmployeesController {
 
     @PutMapping("/update")
     public String updateEmployee(
-            @ModelAttribute("updateEmployeeDTO") UpdateEmployeeDTO updateEmployeeDTO){
+            @ModelAttribute("updateEmployeeDTO") EmployeeDTO updateEmployeeDTO){
 //        najpierw znalezc pracownika:
         EmployeeEntity employeeEntity = employeeRepository.findById(updateEmployeeDTO.getEmployeeId())
                 .orElseThrow(() -> new EntityNotFoundException("EmployeeEntity not found, employeeId: [%s]".formatted(updateEmployeeDTO.getEmployeeId())
