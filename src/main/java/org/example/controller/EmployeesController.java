@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.example.infractructure.configuration.database.entity.EmployeeEntity;
 import org.example.infractructure.configuration.database.repository.EmployeeRepository;
@@ -20,14 +21,13 @@ public class EmployeesController {
 
     @PostMapping("/add")
     public String addEmployees(
-            @RequestParam(value = "name") String name,
-            @RequestParam(value = "surname") String surname,
-            @RequestParam(value = "salary") String salary) {
-
+           @Valid @ModelAttribute("employeeDTO") EmployeeDTO employeeDTO) {
         EmployeeEntity newEmployee = EmployeeEntity.builder()
-                .name(name)
-                .surname(surname)
-                .salary(new BigDecimal(salary))
+                .name(employeeDTO.getName())
+                .surname(employeeDTO.getSurname())
+                .salary(employeeDTO.getSalary())
+                .phone(employeeDTO.getPhone())
+                .email(employeeDTO.getEmail())
                 .build();
         employeeRepository.save(newEmployee);
         return "redirect:/employees" ;

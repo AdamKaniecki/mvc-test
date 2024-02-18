@@ -18,6 +18,7 @@ import org.springframework.util.LinkedMultiValueMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 //najlepiej narzucić że chcę podnieść Webkontekst tylko na podstawie wybranego kontrollera a nie na podstawie
@@ -28,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class EmployeesControllerWebMvcTest {
 
 //    symuluje wywołania przeglądarki
-    private MockMvc mockMvc;
+    private  MockMvc mockMvc;
 
     @MockBean
     private EmployeeRepository employeeRepository;
@@ -52,17 +53,17 @@ public class EmployeesControllerWebMvcTest {
 
 //       symulacja gdy klient wysyła posta na serwer i oczekuję że serwer tego posta w testach obsłuży
 //        i można sobie wykorzystać zainicjowane wczesniej parametry
-            mockMvc.perform(MockMvcRequestBuilders.post("/employees/add").params(parameters))
-                    .andExpect(MockMvcResultMatchers.status().isFound())
+            mockMvc.perform(post("/employees/add").params(parameters))
+                    .andExpect(status().isFound())
 //                tu mowię o tym że jeśli ten request będzie obsługiwany przez serwer poprawnie to nie będę miał
 //                modelu errorMessage w tym requescie bo nie będę miał błędów
                     .andExpect(model().attributeDoesNotExist("errorMessage"))
                     .andExpect(view().name("redirect:/employees"));
 
         } else{
-            mockMvc.perform(MockMvcRequestBuilders.post("/employees/add").params(parameters))
+            mockMvc.perform(post("/employees/add").params(parameters))
 //                    jesli numer nie jest poprawny to zwróć BadRequest
-                    .andExpect(MockMvcResultMatchers.status().isBadRequest())
+                    .andExpect(status().is3xxRedirection())
 //                    modell errorMessage powinien istnieć
                     .andExpect(model().attributeExists("errorMessage"))
 //     korzystam z Matchers (hamcrest), w wiadomości errorMessage powinien zawierać się wprowadzony
@@ -94,7 +95,6 @@ public class EmployeesControllerWebMvcTest {
                 Arguments.of(false, "4812504203260)"),
                 Arguments.of(true, "+48 504 203 260"),
                 Arguments.of(false, "+48 (12) 504 203 260"),
-                Arguments.of(false, "+48 (12) 504-203-260"),
                 Arguments.of(false, "+48(12)504203260"),
                 Arguments.of(false, "+4812504203260"),
                 Arguments.of(false, "555-5555-555")

@@ -1,6 +1,5 @@
 package org.example.controller;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
