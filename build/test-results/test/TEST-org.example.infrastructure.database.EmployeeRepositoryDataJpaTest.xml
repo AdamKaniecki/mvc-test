@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.infrastructure.database.EmployeeRepositoryDataJpaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-18T11:36:50" hostname="DESKTOP-DKU5PQF" time="0.866">
+  <properties/>
+  <testcase name="thatEmployeeCanBeSavedCorrectly()" classname="org.example.infrastructure.database.EmployeeRepositoryDataJpaTest" time="0.866"/>
+  <system-out><![CDATA[[Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.infrastructure.database.EmployeeRepositoryDataJpaTest]: EmployeeRepositoryDataJpaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+[Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.SpringBootApplication for test class org.example.infrastructure.database.EmployeeRepositoryDataJpaTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.0.0)
+
+[background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+[Test worker] INFO  o.e.i.d.EmployeeRepositoryDataJpaTest - Starting EmployeeRepositoryDataJpaTest using Java 17.0.6 with PID 15568 (started by damian in C:\Users\Dell\IdeaProjects\mvc-test)
+[Test worker] INFO  o.e.i.d.EmployeeRepositoryDataJpaTest - No active profile set, falling back to 1 default profile: "default"
+[Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 127 ms. Found 1 JPA repository interfaces.
+[Test worker] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
+[Test worker] INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:22b903a5-a42c-4ec9-9037-7af66a40e9ee;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+[Test worker] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.5.1 by Redgate
+[Test worker] INFO  o.f.c.i.license.VersionPrinter - See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
+[Test worker] INFO  o.f.c.i.license.VersionPrinter - 
+[Test worker] INFO  o.f.c.i.d.base.BaseDatabaseType - Database: jdbc:h2:mem:22b903a5-a42c-4ec9-9037-7af66a40e9ee (H2 2.1)
+[Test worker] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.046s)
+[Test worker] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+[Test worker] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+[Test worker] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1.0 - init employees table"
+[Test worker] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1.0 (execution time 00:00.040s)
+[Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.5.Final
+[Test worker] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+[Test worker] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[Test worker] INFO  o.e.i.d.EmployeeRepositoryDataJpaTest - Started EmployeeRepositoryDataJpaTest in 7.941 seconds (process running for 10.668)
+Hibernate: insert into employee (employee_id, email, name, phone, salary, surname) values (default, ?, ?, ?, ?, ?)
+Hibernate: insert into employee (employee_id, email, name, phone, salary, surname) values (default, ?, ?, ?, ?, ?)
+Hibernate: insert into employee (employee_id, email, name, phone, salary, surname) values (default, ?, ?, ?, ?, ?)
+Hibernate: select e1_0.employee_id,e1_0.email,e1_0.name,e1_0.phone,e1_0.salary,e1_0.surname from employee e1_0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

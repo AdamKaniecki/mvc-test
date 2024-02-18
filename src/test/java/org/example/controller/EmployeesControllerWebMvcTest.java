@@ -63,15 +63,15 @@ public class EmployeesControllerWebMvcTest {
         } else{
             mockMvc.perform(post("/employees/add").params(parameters))
 //                    jesli numer nie jest poprawny to zwróć BadRequest
-                    .andExpect(status().is3xxRedirection());
+                    .andExpect(status().is3xxRedirection())
 //                    modell errorMessage powinien istnieć
-//                    .andExpect(model().attributeExists("errorMessage"))
+                    .andExpect(model().attributeExists("errorMessage"))
 ////     korzystam z Matchers (hamcrest), w wiadomości errorMessage powinien zawierać się wprowadzony
 ////                    błędny numer telefonu symulowanego klienta
 //
-//                    .andExpect(model().attribute("errorMessage", Matchers.containsString(phone)))
+                    .andExpect(model().attribute("errorMessage", Matchers.containsString(phone)))
 //                    zwróć widok błędu
-//                    .andExpect(view().name("error"));
+                    .andExpect(view().name("error"));
         }
     }
 
