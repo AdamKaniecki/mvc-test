@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.infrastructure.database.EmployeeRepositoryDataJpaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-18T11:36:50" hostname="DESKTOP-DKU5PQF" time="0.866">
+<testsuite name="org.example.infrastructure.database.EmployeeRepositoryDataJpaTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-18T13:25:42" hostname="DESKTOP-DKU5PQF" time="1.111">
   <properties/>
-  <testcase name="thatEmployeeCanBeSavedCorrectly()" classname="org.example.infrastructure.database.EmployeeRepositoryDataJpaTest" time="0.866"/>
-  <system-out><![CDATA[[Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.infrastructure.database.EmployeeRepositoryDataJpaTest]: EmployeeRepositoryDataJpaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+  <testcase name="thatEmployeeCanBeSavedCorrectly()" classname="org.example.infrastructure.database.EmployeeRepositoryDataJpaTest" time="1.111"/>
+  <system-out><![CDATA[[Test worker] INFO  o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.example.infrastructure.database.AbstractJpaIT]: AbstractJpaIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
 [Test worker] INFO  o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.example.SpringBootApplication for test class org.example.infrastructure.database.EmployeeRepositoryDataJpaTest
 
   .   ____          _            __ _ _
@@ -14,31 +14,53 @@
  :: Spring Boot ::                (v3.0.0)
 
 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
-[Test worker] INFO  o.e.i.d.EmployeeRepositoryDataJpaTest - Starting EmployeeRepositoryDataJpaTest using Java 17.0.6 with PID 15568 (started by damian in C:\Users\Dell\IdeaProjects\mvc-test)
+[Test worker] INFO  o.t.utility.ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+[Test worker] INFO  o.t.d.DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+[Test worker] INFO  o.t.d.DockerClientProviderStrategy - Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+[Test worker] INFO  o.testcontainers.DockerClientFactory - Docker host IP address is localhost
+[Test worker] INFO  o.testcontainers.DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.2
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 6241 MB
+[Test worker] INFO  docker[testcontainers/ryuk:0.3.4] - Creating container for image: testcontainers/ryuk:0.3.4
+[Test worker] INFO  o.t.utility.RegistryAuthLocator - Failure when attempting to lookup auth config. Please ignore if you don't have images in an authenticated registry. Details: (dockerImageName: testcontainers/ryuk:0.3.4, configFile: C:\Users\Dell\.docker\config.json. Falling back to docker-java default behaviour. Exception message: Unexpected character ('-' (code 45)): was expecting comma to separate Array entries
+ at [Source: [2024-02-18T13:25:29.309930000Z][docker-credential-desktop.system][W] Windows version might not be up-to-date: The system cannot find the file specified.
+{"ServerURL":"https://index.docker.io/v1/","Username":"adamkaniecki","Secret":"dckr_pat_vaCA6ZdPEx0vcBAZPgunLQ7LBfk"}; line: 1, column: 7]
+[Test worker] INFO  docker[testcontainers/ryuk:0.3.4] - Container testcontainers/ryuk:0.3.4 is starting: df18ce29e3dfad14918c86840c78f0bb1b5c3a8929b6ad97aea61eca6e069381
+[Test worker] INFO  docker[testcontainers/ryuk:0.3.4] - Container testcontainers/ryuk:0.3.4 started in PT3.0713339S
+[Test worker] INFO  o.t.utility.RyukResourceReaper - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+[Test worker] INFO  o.testcontainers.DockerClientFactory - Checking the system...
+[Test worker] INFO  o.testcontainers.DockerClientFactory - âś”ď¸Ž Docker server version should be at least 1.6.0
+[Test worker] INFO  docker[postgres:15.0] - Creating container for image: postgres:15.0
+[Test worker] INFO  docker[postgres:15.0] - Container postgres:15.0 is starting: 9714fe5e1b65b4e31c8c57bd923fbabd7378ee7a104585bb7b945088e68c3851
+[Test worker] INFO  docker[postgres:15.0] - Container postgres:15.0 started in PT3.1956192S
+[Test worker] INFO  o.e.i.d.EmployeeRepositoryDataJpaTest - Starting EmployeeRepositoryDataJpaTest using Java 17.0.6 with PID 15180 (started by damian in C:\Users\Dell\IdeaProjects\mvc-test)
 [Test worker] INFO  o.e.i.d.EmployeeRepositoryDataJpaTest - No active profile set, falling back to 1 default profile: "default"
 [Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 127 ms. Found 1 JPA repository interfaces.
-[Test worker] INFO  o.s.b.t.a.j.TestDatabaseAutoConfiguration$EmbeddedDataSourceBeanFactoryPostProcessor - Replacing 'dataSource' DataSource bean with embedded version
-[Test worker] INFO  o.s.j.d.e.EmbeddedDatabaseFactory - Starting embedded database: url='jdbc:h2:mem:22b903a5-a42c-4ec9-9037-7af66a40e9ee;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+[Test worker] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 101 ms. Found 1 JPA repository interfaces.
 [Test worker] INFO  o.f.c.i.license.VersionPrinter - Flyway Community Edition 9.5.1 by Redgate
 [Test worker] INFO  o.f.c.i.license.VersionPrinter - See what's new here: https://flywaydb.org/documentation/learnmore/releaseNotes#9.5.1
 [Test worker] INFO  o.f.c.i.license.VersionPrinter - 
-[Test worker] INFO  o.f.c.i.d.base.BaseDatabaseType - Database: jdbc:h2:mem:22b903a5-a42c-4ec9-9037-7af66a40e9ee (H2 2.1)
-[Test worker] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.046s)
-[Test worker] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
-[Test worker] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
-[Test worker] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1.0 - init employees table"
-[Test worker] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1.0 (execution time 00:00.040s)
+[Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[Test worker] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ae3c140
+[Test worker] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[Test worker] INFO  o.f.c.i.d.base.BaseDatabaseType - Database: jdbc:postgresql://localhost:64879/test (PostgreSQL 15.0)
+[Test worker] INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.053s)
+[Test worker] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "public"."flyway_schema_history" ...
+[Test worker] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": << Empty Schema >>
+[Test worker] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "public" to version "1.0 - init employees table"
+[Test worker] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "public", now at version v1.0 (execution time 00:00.119s)
 [Test worker] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
 [Test worker] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.5.Final
 [Test worker] WARN  org.hibernate.orm.deprecation - HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-[Test worker] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+[Test worker] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
 [Test worker] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 [Test worker] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-[Test worker] INFO  o.e.i.d.EmployeeRepositoryDataJpaTest - Started EmployeeRepositoryDataJpaTest in 7.941 seconds (process running for 10.668)
-Hibernate: insert into employee (employee_id, email, name, phone, salary, surname) values (default, ?, ?, ?, ?, ?)
-Hibernate: insert into employee (employee_id, email, name, phone, salary, surname) values (default, ?, ?, ?, ?, ?)
-Hibernate: insert into employee (employee_id, email, name, phone, salary, surname) values (default, ?, ?, ?, ?, ?)
+[Test worker] INFO  o.e.i.d.EmployeeRepositoryDataJpaTest - Started EmployeeRepositoryDataJpaTest in 15.616 seconds (process running for 18.392)
+Hibernate: insert into employee (email, name, phone, salary, surname) values (?, ?, ?, ?, ?)
+Hibernate: insert into employee (email, name, phone, salary, surname) values (?, ?, ?, ?, ?)
+Hibernate: insert into employee (email, name, phone, salary, surname) values (?, ?, ?, ?, ?)
 Hibernate: select e1_0.employee_id,e1_0.email,e1_0.name,e1_0.phone,e1_0.salary,e1_0.surname from employee e1_0
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>

@@ -24,37 +24,23 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-//    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
-    runtimeOnly 'com.h2database:h2'
-    annotationProcessor 'org.projectlombok:lombok'
-
-//    implementation 'org.springframework.boot:spring-boot-starter-webflux'
-//    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
-//    implementation 'org.springframework.boot:spring-boot-starter-security'
-
-//db
     implementation 'org.flywaydb:flyway-core'
-//    runtimeOnly 'org.postgresql:postgresql'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    runtimeOnly 'org.postgresql:postgresql'
 
-////api
-//    implementation "org.springdoc:springdoc-openapi-ui:1.6.13"
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.0'
-
-    //annotation
-
-
-
-
-//test
-
+    testRuntimeOnly 'com.h2database:h2'
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-//    testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.testcontainers:junit-jupiter'
-//    testImplementation 'org.testcontainers:postgresql'
+    testImplementation 'org.testcontainers:postgresql'
+
+//    testImplementation 'org.springframework.security:spring-security-test'
+
+
 }
 
 dependencyManagement {
